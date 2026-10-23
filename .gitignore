@@ -8,6 +8,9 @@ dist/
 sao-pet-data/
 *.log
 
+# 开发截图（含屏幕内容，不进公开仓库）
+shots/
+
 # 系统文件
 Thumbs.db
 .DS_Store
