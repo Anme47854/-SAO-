@@ -1,0 +1,55 @@
+{
+  "name": "sao-ui-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SAO-UI (sao-ui-beta) demo page + SAO menu desktop pet Electron app",
+  "main": "electron/index.cjs",
+  "author": "Demo",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "app": "electron .",
+    "app:dev": "electron . --dev",
+    "check": "node scripts/check-main.cjs",
+    "test": "node --test \"electron/tests/*.test.cjs\"",
+    "dist:win": "electron-builder --win portable",
+    "dist:zip": "electron-builder --win zip"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "2.3.1",
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "font-awesome": "4.7.0",
+    "jquery": "3.6.0",
+    "parallax-js": "3.1.0",
+    "sao-ui-beta": "1.2.21",
+    "vite": "4.5.5",
+    "vue": "2.7.16",
+    "vue-template-compiler": "2.7.16"
+  },
+  "build": {
+    "appId": "com.demo.saoui",
+    "productName": "SAO-UIMenu-Pet",
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "electronDist": "./node_modules/electron/dist",
+    "asar": true,
+    "npmRebuild": false,
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "SAO-UIMenu-Pet-${version}.exe"
+    }
+  }
+}
